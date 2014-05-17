@@ -23,7 +23,7 @@ const (
 	Gogo
 	Umaro
 	Vicks_Wedge
-	Imp
+	ImpId
 	Leo
 	Banon
 	EsperTerra    // (Terra)
@@ -54,7 +54,7 @@ var cname = map[CharId]string{
 	Gogo:           "Gogo",
 	Umaro:          "Umaro",
 	Vicks_Wedge:    "Vicks_Wedge",
-	Imp:            "Imp",
+	ImpId:          "Imp",
 	Leo:            "Leo",
 	Banon:          "Banon",
 	EsperTerra:     "EsperTerra",

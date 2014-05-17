@@ -15,9 +15,9 @@ const (
 	Swdtech
 	Throw
 	Tools
-	Blitz
+	BlitzCmd
 	Runic
-	Lore
+	LoreCmd
 	Sketch
 	Control
 	Slot
@@ -38,36 +38,36 @@ const (
 )
 
 var cmdName = map[Command]string{
-	Fight:   "Fight",
-	ItemCmd: "Item",
-	Magic:   "Magic",
-	Morph:   "Morph",
-	Revert:  "Revert",
-	Steal:   "Steal",
-	Capture: "Capture",
-	Swdtech: "Swdtech",
-	Throw:   "Throw",
-	Tools:   "Tools",
-	Blitz:   "Blitz",
-	Runic:   "Runic",
-	Lore:    "Lore",
-	Sketch:  "Sketch",
-	Control: "Control",
-	Slot:    "Slot",
-	Rage:    "Rage",
-	Leap:    "Leap",
-	Mimic:   "Mimic",
-	Dance:   "Dance",
-	Row:     "Row",
-	Def:     "Def",
-	Jump:    "Jump",
-	XMagic:  "XMagic",
-	GP_Rain: "GP_Rain",
-	Summon:  "Summon",
-	Health:  "Health",
-	Shock:   "Shock",
-	Possess: "Possess",
-	MagiTek: "MagiTek",
+	Fight:    "Fight",
+	ItemCmd:  "Item",
+	Magic:    "Magic",
+	Morph:    "Morph",
+	Revert:   "Revert",
+	Steal:    "Steal",
+	Capture:  "Capture",
+	Swdtech:  "Swdtech",
+	Throw:    "Throw",
+	Tools:    "Tools",
+	BlitzCmd: "Blitz",
+	Runic:    "Runic",
+	LoreCmd:  "Lore",
+	Sketch:   "Sketch",
+	Control:  "Control",
+	Slot:     "Slot",
+	Rage:     "Rage",
+	Leap:     "Leap",
+	Mimic:    "Mimic",
+	Dance:    "Dance",
+	Row:      "Row",
+	Def:      "Def",
+	Jump:     "Jump",
+	XMagic:   "XMagic",
+	GP_Rain:  "GP_Rain",
+	Summon:   "Summon",
+	Health:   "Health",
+	Shock:    "Shock",
+	Possess:  "Possess",
+	MagiTek:  "MagiTek",
 }
 
 func (c Command) MarshalJSON() ([]byte, error) {
