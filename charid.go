@@ -7,6 +7,9 @@ type (
 	Portrait CharId
 )
 
+// 0145
+// 76ad
+// 839c
 const (
 	Terra CharId = iota
 	Locke
