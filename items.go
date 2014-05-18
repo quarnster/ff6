@@ -538,6 +538,7 @@ var iname = map[Item]string{
 	SmokeBomb:      "SmokeBomb",
 	TeleportStone:  "TeleportStone",
 	DriedMeat:      "DriedMeat",
+	Nothing:        "Nothing",
 }
 
 func (i Item) MarshalJSON() ([]byte, error) {

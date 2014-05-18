@@ -1,6 +1,6 @@
 package main
 
-//import "encoding/json"
+import "encoding/json"
 
 type (
 	Lore        uint32
@@ -34,41 +34,39 @@ const (
 	SelfDestruct
 )
 
-// func (l LoreMastery) MarshalJSON() ([]byte, error) {
-// 	str := ""
-// 	for i := uint(0); i < 24; i++ {
-// 		if l&(1<<i) != 0 {
-// 			str += "+" + lorenames[Lore(1<<i)]
-// 		}
-// 	}
-// 	return json.Marshal(str)
-// }
+func (l LoreMastery) MarshalJSON() ([]byte, error) {
+	d := make(map[string]bool)
+	for k, v := range lorenames {
+		d[v] = (uint24(l).Uint() & uint32(k)) != 0
+	}
+	return json.Marshal(d)
+}
 
 var lorenames = map[Lore]string{
 	Condemned:          "Condemned",
 	Roulette:           "Roulette",
 	Tsunami:            "Tsunami",
-	AquaBreath:         "AquaBreath",
+	AquaBreath:         "Aqua Breath",
 	Aero:               "Aero",
-	OneThousandNeedles: "OneThousandNeedles",
+	OneThousandNeedles: "1000 Needles",
 	BigGuard:           "BigGuard",
 	RevengeBlast:       "RevengeBlast",
 	PearlWind:          "PearlWind",
-	L5Death:            "L5Death",
-	L4Flare:            "L4Flare",
-	L3Confuse:          "L3Confuse",
-	ReflectLore:        "ReflectLore",
-	LPearl:             "LPearl",
+	L5Death:            "L.5 Death",
+	L4Flare:            "L.4 Flare",
+	L3Confuse:          "L.3 Confuse",
+	ReflectLore:        "Reflect",
+	LPearl:             "L.? Pearl",
 	StepMine:           "StepMine",
 	ForceField:         "ForceField",
 	Dischord:           "Dischord",
 	SourMouth:          "SourMouth",
 	PepUp:              "PepUp",
 	Rippler:            "Rippler",
-	StoneLore:          "StoneLore",
+	StoneLore:          "Stone",
 	Quasar:             "Quasar",
 	GrandTrain:         "GrandTrain",
-	SelfDestruct:       "SelfDestruct",
+	SelfDestruct:       "Self Destruct",
 }
 
 //var a = Roulette + Tsunami + AquaBreath + Aero + OneThousandNeedles + RevengeBlast + L5Death + ForceField + Dischord + Stone + SelfDestruct
