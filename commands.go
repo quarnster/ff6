@@ -31,7 +31,7 @@ const (
 	Rage
 	Leap
 	Mimic
-	Dance
+	DanceCmd
 	Row
 	Def
 	Jump
@@ -65,7 +65,7 @@ var cmdName = map[Command]string{
 	Rage:      "Rage",
 	Leap:      "Leap",
 	Mimic:     "Mimic",
-	Dance:     "Dance",
+	DanceCmd:  "Dance",
 	Row:       "Row",
 	Def:       "Def",
 	Jump:      "Jump",

@@ -45,20 +45,20 @@ type (
 		SpellMastery SpellMasteries
 		Allzeroes    [332]byte `json:"-"`
 		Something    uint8
-		Unknown222   [49]byte //`json:"-"`
+		Unknown222   [49]byte
 		Swdtech      uint8
 		BlitzMastery BlitzMastery
-		LoreMastery  LoreMastery //`json:"-"`
-		Beastiary    [41]uint8
-		DanceMastery uint8     //
-		Unknown22    [352]byte //`json:"-"`
-		Something2   uint8     //`json:"-"`
-		Unknown22a   [182]byte //`json:"-"`
-		Something3   uint8     //`json:"-"`
-		Unknown22b   [51]byte  //`json:"-"`
-		Something4   [5]byte   //`json:"-"`
-		Unknown22c   [88]byte  //`json:"-"`
-		Checksum     uint16    //`json:"-"`
+		LoreMastery  LoreMastery
+		Beastiary    [32]uint8
+		DanceMastery DanceMastery
+		Unknown22    [361]byte
+		Something2   uint8
+		Unknown22a   [182]byte
+		Something3   uint8
+		Unknown22b   [51]byte
+		Something4   [5]byte
+		Unknown22c   [88]byte
+		Checksum     uint16
 	}
 	Iv struct {
 		EspersOwned EspersOwned
