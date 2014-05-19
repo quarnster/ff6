@@ -4,7 +4,12 @@
 
 package main
 
-type Blitz uint8
+import "encoding/json"
+
+type (
+	Blitz        uint8
+	BlitzMastery uint8
+)
 
 const (
 	RagingFist Blitz = 1 << iota
@@ -17,5 +22,36 @@ const (
 	PhantomRush
 )
 
-//10101111
-// 0xaf
+func (b *BlitzMastery) UnmarshalJSON(data []byte) error {
+	d := make(map[string]bool)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+	var i Blitz
+	for k, v := range blitznames {
+		if d[v] {
+			i |= k
+		}
+	}
+	*b = BlitzMastery(i)
+	return nil
+}
+
+func (b BlitzMastery) MarshalJSON() ([]byte, error) {
+	d := make(map[string]bool)
+	for k, v := range blitznames {
+		d[v] = Blitz(b)&k != 0
+	}
+	return json.Marshal(d)
+}
+
+var blitznames = map[Blitz]string{
+	RagingFist:    "RagingFist",
+	AuraCannon:    "AuraCannon",
+	MeteorStrike:  "MeteorStrike",
+	RisingPhoenix: "RisingPhoenix",
+	Chakra:        "Chakra",
+	RazorGale:     "RazorGale",
+	SoulSpiral:    "SoulSpiral",
+	PhantomRush:   "PhantomRush",
+}

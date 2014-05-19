@@ -47,7 +47,7 @@ type (
 		Something    uint8
 		Unknown222   [49]byte //`json:"-"`
 		Swdtech      uint8
-		BlitzMastery uint8
+		BlitzMastery BlitzMastery
 		LoreMastery  LoreMastery //`json:"-"`
 		Beastiary    [41]uint8
 		DanceMastery uint8     //
