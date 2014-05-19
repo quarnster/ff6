@@ -58,14 +58,14 @@ type (
 		Unknown22b   [51]byte
 		Something4   [5]byte
 		Unknown22c   [88]byte
-		Checksum     uint16
+		Checksum     uint16 `json:"-"`
 	}
 	Iv struct {
 		EspersOwned EspersOwned
 		Unknown     [12]uint8
 		Inventory   Inventory
 		Unknown4    [430]uint8
-		IvChecksum  uint16
+		IvChecksum  uint16 `json:"-"`
 	}
 
 	Body2 struct {
