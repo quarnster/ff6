@@ -43,8 +43,11 @@ type (
 		Time         Time
 		Steps        uint24
 		SpellMastery SpellMasteries
-		Allzeroes    [333]byte   //`json:"-"`
-		Unknown222   [51]byte    //`json:"-"`
+		Allzeroes    [332]byte `json:"-"`
+		Something    uint8
+		Unknown222   [49]byte //`json:"-"`
+		Swdtech      uint8
+		BlitzMastery uint8
 		LoreMastery  LoreMastery //`json:"-"`
 		Beastiary    [41]uint8
 		DanceMastery uint8     //
@@ -58,10 +61,11 @@ type (
 		Checksum     uint16    //`json:"-"`
 	}
 	Iv struct {
-		Unknown    [16]uint8
-		Inventory  Inventory
-		Unknown4   [430]uint8
-		IvChecksum uint16
+		EspersOwned EspersOwned
+		Unknown     [12]uint8
+		Inventory   Inventory
+		Unknown4    [430]uint8
+		IvChecksum  uint16
 	}
 
 	Body2 struct {
@@ -75,7 +79,7 @@ type (
 		Body       Body
 		Iv         Iv
 		Body2      Body2
-		Allzeroes2 [15212]byte //`json:"-"`
+		Allzeroes2 [15212]byte `json:"-"`
 	}
 
 	FileHeader struct {
@@ -114,12 +118,12 @@ type (
 		Stamina    uint8
 		Magic      uint8
 		Esper      Esper
-		RightHand  Item
-		LeftHand   Item
-		Helmet     Item
-		Body       Item
-		Relic1     Item
-		Relic2     Item
+		RightHand  Equipable
+		LeftHand   Equipable
+		Helmet     Equipable
+		Body       Equipable
+		Relic1     Equipable
+		Relic2     Equipable
 	}
 	Writer interface {
 		Write(io.Writer) error

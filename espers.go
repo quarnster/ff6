@@ -9,7 +9,10 @@ import (
 	"fmt"
 )
 
-type Esper uint8
+type (
+	Esper       uint8
+	EspersOwned uint32
+)
 
 const (
 	Ramuh Esper = iota
@@ -78,7 +81,6 @@ var ename = map[Esper]string{
 	Gilgamesh:     "Gilgamesh",
 	Cactuar:       "Cactuar",
 	Diabolos:      "Diabolos",
-	NoEsper:       "",
 }
 
 func (e Esper) MarshalJSON() ([]byte, error) {
@@ -90,6 +92,10 @@ func (e *Esper) UnmarshalJSON(data []byte) error {
 	if err := json.Unmarshal(data, &s); err != nil {
 		return err
 	}
+	if s == "" {
+		*e = NoEsper
+		return nil
+	}
 	for k, v := range ename {
 		if v == s {
 			*e = k
@@ -97,4 +103,25 @@ func (e *Esper) UnmarshalJSON(data []byte) error {
 		}
 	}
 	return fmt.Errorf("\"%s\" isn't a known Esper", s)
+}
+
+func (e EspersOwned) MarshalJSON() ([]byte, error) {
+	d := make(map[string]bool)
+	for k, v := range ename {
+		d[v] = e&(1<<uint32(k)) != 0
+	}
+	return json.Marshal(d)
+}
+
+func (e *EspersOwned) UnmarshalJSON(data []byte) error {
+	d := make(map[string]bool)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+	for k, v := range ename {
+		if d[v] {
+			*e |= (1 << uint32(k))
+		}
+	}
+	return nil
 }

@@ -70,6 +70,8 @@ const (
 	Regen
 	Reraise
 	Flood
+	Gravija
+	Valor
 )
 
 var spellname = map[Spell]string{
@@ -128,10 +130,11 @@ var spellname = map[Spell]string{
 	Regen:       "Regen",
 	Reraise:     "Reraise",
 	Flood:       "Flood",
+	Gravija:     "Gravija",
+	Valor:       "Valor",
 }
 
 func (sm *SpellMasteries) UnmarshalJSON(data []byte) error {
-
 	d := make(map[string]json.RawMessage)
 	if err := json.Unmarshal(data, &d); err != nil {
 		return err
