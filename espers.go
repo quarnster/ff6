@@ -1,6 +1,9 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Esper uint8
 
@@ -33,6 +36,7 @@ const (
 	Lakshmi
 	Phoenix
 	Leviathan
+	NoEsper Esper = 255
 )
 
 var ename = map[Esper]string{
@@ -64,8 +68,23 @@ var ename = map[Esper]string{
 	Lakshmi:       "Lakshmi",
 	Phoenix:       "Phoenix",
 	Leviathan:     "Leviathan",
+	NoEsper:       "",
 }
 
 func (e Esper) MarshalJSON() ([]byte, error) {
 	return json.Marshal(ename[e])
+}
+
+func (e *Esper) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	for k, v := range ename {
+		if v == s {
+			*e = k
+			return nil
+		}
+	}
+	return fmt.Errorf("\"%s\" isn't a known Esper", s)
 }

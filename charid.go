@@ -1,6 +1,10 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+	"strconv"
+)
 
 type (
 	CharId   uint8
@@ -72,10 +76,37 @@ var cname = map[CharId]string{
 	Empty4:         "Empty4",
 }
 
-func (c CharId) MarshalJSON() ([]byte, error) {
-	return json.Marshal(cname[c])
+func (c *CharId) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	for k, v := range cname {
+		if v == s {
+			*c = k
+			return nil
+		}
+	}
+
+	i, err := strconv.ParseInt(s, 10, 16)
+	if err != nil {
+		return err
+	}
+	*c = CharId(i)
+	return nil
 }
 
+func (c CharId) MarshalJSON() ([]byte, error) {
+	v, ok := cname[c]
+	if !ok {
+		v = fmt.Sprintf("%d", c)
+	}
+	return json.Marshal(v)
+}
+
+func (p *Portrait) UnmarshalJSON(data []byte) error {
+	return (*CharId)(p).UnmarshalJSON(data)
+}
 func (p Portrait) MarshalJSON() ([]byte, error) {
 	return CharId(p).MarshalJSON()
 }

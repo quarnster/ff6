@@ -1,6 +1,14 @@
 package main
 
-type Spell uint8
+import (
+	"encoding/json"
+)
+
+type (
+	Spell          uint8
+	SpellMastery   [64]uint8
+	SpellMasteries [13]SpellMastery
+)
 
 const (
 	Fire Spell = iota
@@ -116,4 +124,54 @@ var spellname = map[Spell]string{
 	Regen:       "Regen",
 	Reraise:     "Reraise",
 	Flood:       "Flood",
+}
+
+func (sm *SpellMasteries) UnmarshalJSON(data []byte) error {
+
+	d := make(map[string]json.RawMessage)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+	for i := range sm {
+		if err := json.Unmarshal(d[cname[CharId(i)]], &sm[i]); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func (sm SpellMasteries) MarshalJSON() ([]byte, error) {
+	d := make(map[string]*SpellMastery)
+	for i := range sm {
+		d[cname[CharId(i)]] = &sm[i]
+	}
+	return json.Marshal(d)
+}
+
+func (sm *SpellMastery) UnmarshalJSON(data []byte) error {
+	d := make(map[string]uint8)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+
+	for k, v := range spellname {
+		val := d[v]
+		if val >= 100 {
+			val = 0xff
+		}
+		sm[k] = val
+	}
+	return nil
+}
+
+func (sm SpellMastery) MarshalJSON() ([]byte, error) {
+	d := make(map[string]uint8)
+	for k, v := range spellname {
+		val := sm[k]
+		if val > 100 {
+			val = 100
+		}
+		d[v] = val
+	}
+	return json.Marshal(d)
 }

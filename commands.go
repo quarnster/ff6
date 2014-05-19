@@ -1,6 +1,9 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Command uint8
 
@@ -35,41 +38,57 @@ const (
 	Shock
 	Possess
 	MagiTek
+	NoCommand Command = 255
 )
 
 var cmdName = map[Command]string{
-	Fight:    "Fight",
-	ItemCmd:  "Item",
-	Magic:    "Magic",
-	Morph:    "Morph",
-	Revert:   "Revert",
-	Steal:    "Steal",
-	Capture:  "Capture",
-	Swdtech:  "Swdtech",
-	Throw:    "Throw",
-	Tools:    "Tools",
-	BlitzCmd: "Blitz",
-	Runic:    "Runic",
-	LoreCmd:  "Lore",
-	Sketch:   "Sketch",
-	Control:  "Control",
-	Slot:     "Slot",
-	Rage:     "Rage",
-	Leap:     "Leap",
-	Mimic:    "Mimic",
-	Dance:    "Dance",
-	Row:      "Row",
-	Def:      "Def",
-	Jump:     "Jump",
-	XMagic:   "XMagic",
-	GP_Rain:  "GP_Rain",
-	Summon:   "Summon",
-	Health:   "Health",
-	Shock:    "Shock",
-	Possess:  "Possess",
-	MagiTek:  "MagiTek",
+	Fight:     "Fight",
+	ItemCmd:   "Item",
+	Magic:     "Magic",
+	Morph:     "Morph",
+	Revert:    "Revert",
+	Steal:     "Steal",
+	Capture:   "Capture",
+	Swdtech:   "Swdtech",
+	Throw:     "Throw",
+	Tools:     "Tools",
+	BlitzCmd:  "Blitz",
+	Runic:     "Runic",
+	LoreCmd:   "Lore",
+	Sketch:    "Sketch",
+	Control:   "Control",
+	Slot:      "Slot",
+	Rage:      "Rage",
+	Leap:      "Leap",
+	Mimic:     "Mimic",
+	Dance:     "Dance",
+	Row:       "Row",
+	Def:       "Def",
+	Jump:      "Jump",
+	XMagic:    "XMagic",
+	GP_Rain:   "GP_Rain",
+	Summon:    "Summon",
+	Health:    "Health",
+	Shock:     "Shock",
+	Possess:   "Possess",
+	MagiTek:   "MagiTek",
+	NoCommand: "",
 }
 
 func (c Command) MarshalJSON() ([]byte, error) {
 	return json.Marshal(cmdName[c])
+}
+
+func (c *Command) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	for k, v := range cmdName {
+		if v == s {
+			*c = k
+			return nil
+		}
+	}
+	return fmt.Errorf("\"%s\" isn't a known command", s)
 }

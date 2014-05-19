@@ -1,8 +1,17 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
-type Item uint8
+type (
+	Item      uint8
+	Inventory struct {
+		SortOrder [288]Item
+		Count     [288]uint8
+	}
+)
 
 const (
 
@@ -543,4 +552,48 @@ var iname = map[Item]string{
 
 func (i Item) MarshalJSON() ([]byte, error) {
 	return json.Marshal(iname[i])
+}
+
+func (i *Item) UnmarshalJSON(data []byte) error {
+	var s string
+	if err := json.Unmarshal(data, &s); err != nil {
+		return err
+	}
+	for k, v := range iname {
+		if v == s {
+			*i = k
+			return nil
+		}
+	}
+	return fmt.Errorf("\"%s\" isn't a known Item", s)
+}
+
+func (inv *Inventory) UnmarshalJSON(data []byte) error {
+	d := make(map[string]json.RawMessage)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+
+	if err := json.Unmarshal(d["SortingOrder"], &inv.SortOrder); err != nil {
+		return err
+	}
+	for i, k := range inv.SortOrder {
+		if err := json.Unmarshal(d[iname[k]], &inv.Count[i]); err != nil {
+			return err
+		}
+	}
+	for i := 256; i < len(inv.Count); i++ {
+		inv.Count[i] = 0
+		inv.SortOrder[i] = 0xff
+	}
+	return nil
+}
+
+func (inv Inventory) MarshalJSON() ([]byte, error) {
+	d := make(map[string]interface{})
+	d["SortingOrder"] = &inv.SortOrder
+	for i, k := range inv.SortOrder {
+		d[iname[k]] = inv.Count[i]
+	}
+	return json.Marshal(d)
 }

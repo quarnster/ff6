@@ -34,6 +34,21 @@ const (
 	SelfDestruct
 )
 
+func (l *LoreMastery) UnmarshalJSON(data []byte) error {
+	d := make(map[string]bool)
+	if err := json.Unmarshal(data, &d); err != nil {
+		return err
+	}
+	var i Lore
+	for k, v := range lorenames {
+		if d[v] {
+			i |= k
+		}
+	}
+	(*uint24)(l).Set(uint32(i))
+	return nil
+}
+
 func (l LoreMastery) MarshalJSON() ([]byte, error) {
 	d := make(map[string]bool)
 	for k, v := range lorenames {
