@@ -40,6 +40,9 @@ const (
 	Lakshmi
 	Phoenix
 	Leviathan
+	Cactuar
+	Diabolos
+	Gilgamesh
 	NoEsper Esper = 255
 )
 
@@ -60,7 +63,7 @@ var ename = map[Esper]string{
 	Bahamut:       "Bahamut",
 	Alexandr:      "Alexandr",
 	Crusader:      "Crusader",
-	RagnarokEsper: "RagnarokEsper",
+	RagnarokEsper: "Ragnarok",
 	Kirin:         "Kirin",
 	ZoonaSeeker:   "ZoonaSeeker",
 	Carbunkl:      "Carbunkl",
@@ -72,6 +75,9 @@ var ename = map[Esper]string{
 	Lakshmi:       "Lakshmi",
 	Phoenix:       "Phoenix",
 	Leviathan:     "Leviathan",
+	Gilgamesh:     "Gilgamesh",
+	Cactuar:       "Cactuar",
+	Diabolos:      "Diabolos",
 	NoEsper:       "",
 }
 
