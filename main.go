@@ -44,9 +44,9 @@ type (
 		Steps        uint24
 		SpellMastery SpellMasteries
 		Allzeroes    [333]byte   //`json:"-"`
-		Unknown222   [52]byte    //`json:"-"`
+		Unknown222   [51]byte    //`json:"-"`
 		LoreMastery  LoreMastery //`json:"-"`
-		Beastiary    [40]uint8
+		Beastiary    [41]uint8
 		DanceMastery uint8     //
 		Unknown22    [352]byte //`json:"-"`
 		Something2   uint8     //`json:"-"`
