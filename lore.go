@@ -12,29 +12,29 @@ type (
 )
 
 const (
-	Condemned Lore = 1 << iota
+	Doom Lore = 1 << iota
 	Roulette
 	Tsunami
 	AquaBreath
 	Aero
 	OneThousandNeedles
-	BigGuard
+	MightyGuard
 	RevengeBlast
-	PearlWind
+	WhiteWind
 	L5Death
 	L4Flare
 	L3Confuse
 	ReflectLore
-	LPearl
-	StepMine
+	LHoly
+	Traveler
 	ForceField
 	Dischord
-	SourMouth
-	PepUp
+	BadBreath
+	Transfusion
 	Rippler
 	StoneLore
 	Quasar
-	GrandTrain
+	GrandDelta
 	SelfDestruct
 )
 
@@ -62,30 +62,30 @@ func (l LoreMastery) MarshalJSON() ([]byte, error) {
 }
 
 var lorenames = map[Lore]string{
-	Condemned:          "Condemned",
+	Doom:               "Doom",
 	Roulette:           "Roulette",
 	Tsunami:            "Tsunami",
 	AquaBreath:         "Aqua Breath",
 	Aero:               "Aero",
 	OneThousandNeedles: "1000 Needles",
-	BigGuard:           "BigGuard",
-	RevengeBlast:       "RevengeBlast",
-	PearlWind:          "PearlWind",
-	L5Death:            "L.5 Death",
-	L4Flare:            "L.4 Flare",
-	L3Confuse:          "L.3 Confuse",
-	ReflectLore:        "Reflect",
-	LPearl:             "L.? Pearl",
-	StepMine:           "StepMine",
-	ForceField:         "ForceField",
+	MightyGuard:        "Mighty Guard",
+	RevengeBlast:       "Revenge Blast",
+	WhiteWind:          "White Wind",
+	L5Death:            "Lv.5 Death",
+	L4Flare:            "Lv.4 Flare",
+	L3Confuse:          "Lv.3 Confuse",
+	ReflectLore:        "Reflect???",
+	LHoly:              "Lv.? Holy",
+	Traveler:           "Traveler",
+	ForceField:         "Force Field",
 	Dischord:           "Dischord",
-	SourMouth:          "SourMouth",
-	PepUp:              "PepUp",
+	BadBreath:          "Bad Breath",
+	Transfusion:        "Transfusion",
 	Rippler:            "Rippler",
 	StoneLore:          "Stone",
 	Quasar:             "Quasar",
-	GrandTrain:         "GrandTrain",
-	SelfDestruct:       "Self Destruct",
+	GrandDelta:         "Grand Delta",
+	SelfDestruct:       "Self-Destruct",
 }
 
 //var a = Roulette + Tsunami + AquaBreath + Aero + OneThousandNeedles + RevengeBlast + L5Death + ForceField + Dischord + Stone + SelfDestruct

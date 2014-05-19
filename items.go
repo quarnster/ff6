@@ -28,7 +28,7 @@ const (
 	ThiefsKnife
 	AssassinsDagger
 	ManEater
-	SwordBreaker
+	Swordbreaker
 	Gladius
 	ValiantKnife
 	// Sword (0xA)
@@ -57,7 +57,7 @@ const (
 	HeavyLance
 	Partisian
 	HolyLance
-	GoldLance
+	GoldenSpear
 	RadiantLance
 	Impartisian
 	//  Dirk (0x25)
@@ -120,12 +120,12 @@ const (
 	VenomClaws
 	BurningFist
 	DragonClaws
-	TigerFang
+	Tigerfang
 	// Shields (0x5A)
 	Buckler
 	HeavyShield
 	MythrilShield
-	GoldShield
+	GoldenShield
 	AegisShield
 	DiamondShield
 	FlameShield
@@ -139,55 +139,55 @@ const (
 	ForceShield
 	// Helmet (0x69)
 	LeatherHat
-	HairBand
+	Hairband
 	PlumedHat
 	Beret
 	MagusHat
 	Bandana
 	IronHelmet
-	Coronet
-	BardHat
+	HypnoCrown
+	PriestsMiter
 	GreenBeret
-	HeadBand
-	MithrilHelm
+	TwistHeadband
+	MythrilHelm
 	Tiara
-	GoldHelmet
+	GoldenHelmet
 	TigerMask
 	RedCap
 	MysteryVeil
 	Circlet
 	RoyalCrown
 	DiamondHelm
-	DarkHood
+	BlackCowl
 	CrystalHelm
 	OathViel
-	CatHood
-	GenjiHelm
+	CatEarHood
+	GenjiHelmet
 	Thornlet
-	Titanium
+	Saucer
 	// Armor (0x84)
 	LeatherArmor
 	CottonRobe
-	KungFuSuit
+	KenpoGi
 	IronArmor
 	SilkRobe
-	MithrilVest
+	MythrilVest
 	NinjaGear
 	WhiteDress
-	MithrilMail
+	MythrilMail
 	GaiaGear
 	MirageDress
-	GoldArmor
+	GoldenArmor
 	PowerSash
-	LightRobe
+	LuminousRobe
 	DiamondVest
 	RedJacket
 	ForceArmor
 	DiamondArmor
 	BlackGarb
-	TaoRobe
+	MagusRobe
 	CrystalMail
-	CzarinaGown
+	RegalGown
 	GenjiArmor
 	ReedCloak
 	MinervaBustier
@@ -196,12 +196,12 @@ const (
 	MoogleSuit
 	NutkinSuit
 	BehemothSuit
-	SnowMuffler
+	SnowScarf
 	// Tool (0xa3)
-	NoiseBlaster
-	BioBlaster
+	Noiseblaster
+	Bioblaster
 	Flash
-	ChainSaw
+	Chainsaw
 	Debilitator
 	Drill
 	AirAnchor
@@ -228,10 +228,10 @@ const (
 	AngelWings
 	AngelRing
 	KnightsCode
-	DragonBoots
+	DragoonBoots
 	ZephyrCloak
 	PrincessRing
-	CursedCing
+	CursedRing
 	Earrings
 	GigasGlove
 	BlizzardRing
@@ -279,15 +279,15 @@ const (
 	Elixir
 	Megalixir
 	PhoenixDown
-	Revivify
+	HolyWater
 	Antidote
-	Eyedrop
-	Soft
+	EyeDrops
+	GoldNeedle
 	Remedy
 	SleepingBag
 	Tent
 	GreenCherry
-	Magicite
+	MagiciteShard
 	SuperBall
 	EchoScreen
 	SmokeBomb
@@ -317,41 +317,41 @@ const (
 var (
 	iname = map[Item]string{
 		Dagger:             "Dagger",
-		MythrilKnife:       "MythrilKnife",
-		MainGauche:         "MainGauche",
-		AirKnife:           "AirKnife",
-		ThiefsKnife:        "ThiefsKnife",
-		AssassinsDagger:    "AssassinsDagger",
-		ManEater:           "ManEater",
-		SwordBreaker:       "SwordBreaker",
+		MythrilKnife:       "Mythril Knife",
+		MainGauche:         "Main Gauche",
+		AirKnife:           "Air Knife",
+		ThiefsKnife:        "Thief's Knife",
+		AssassinsDagger:    "Assassin's Dagger",
+		ManEater:           "Man-Eater",
+		Swordbreaker:       "Swordbreaker",
 		Gladius:            "Gladius",
-		ValiantKnife:       "ValiantKnife",
-		MythrilSword:       "MythrilSword",
-		GreatSword:         "GreatSword",
-		RuneBlade:          "RuneBlade",
+		ValiantKnife:       "Valiant Knife",
+		MythrilSword:       "Mythril Sword",
+		GreatSword:         "Great Sword",
+		RuneBlade:          "Rune Blade",
 		Flametounge:        "Flametounge",
 		Icebrand:           "Icebrand",
-		ThunderBlade:       "ThunderBlade",
-		BastardSword:       "BastardSword",
+		ThunderBlade:       "Thunder Blade",
+		BastardSword:       "Bastard Sword",
 		Stoneblade:         "Stoneblade",
-		BloodSword:         "BloodSword",
+		BloodSword:         "Blood Sword",
 		Enhancer:           "Enhancer",
-		CrystalSword:       "CrystalSword",
+		CrystalSword:       "Crystal Sword",
 		Falchion:           "Falchion",
-		SoulSabre:          "SoulSabre",
+		SoulSabre:          "Soul Sabre",
 		Organyx:            "Organyx",
 		Excalibur:          "Excalibur",
 		Zantetsuken:        "Zantetsuken",
 		Lightbringer:       "Lightbringer",
 		Ragnarok:           "Ragnarok",
-		UltimaWeapon:       "UltimaWeapon",
-		MythrilSpear:       "MythrilSpear",
+		UltimaWeapon:       "Ultima Weapon",
+		MythrilSpear:       "Mythril Spear",
 		Trident:            "Trident",
-		HeavyLance:         "HeavyLance",
+		HeavyLance:         "Heavy Lance",
 		Partisian:          "Partisian",
-		HolyLance:          "HolyLance",
-		GoldLance:          "GoldLance",
-		RadiantLance:       "RadiantLance",
+		HolyLance:          "Holy Lance",
+		GoldenSpear:        "Golden Spear",
+		RadiantLance:       "Radiant Lance",
 		Impartisian:        "Impartisian",
 		Kunai:              "Kunai",
 		Kodachi:            "Kodachi",
@@ -361,233 +361,233 @@ var (
 		Kagenui:            "Kagenui",
 		Ashura:             "Ashura",
 		Kotetsu:            "Kotetsu",
-		Kikuichimonji:      "Kikuichimonji",
+		Kikuichimonji:      "Kiku-ichimonji",
 		Kazekiri:           "Kazekiri",
 		Murasame:           "Murasame",
 		Masamune:           "Masamune",
 		Murakuma:           "Murakuma",
 		Mutsunokami:        "Mutsunokami",
-		HealingRod:         "HealingRod",
-		MythrilRod:         "MythrilRod",
-		FlameRod:           "FlameRod",
-		IceRod:             "IceRod",
-		ThunderRod:         "ThunderRod",
-		PoisonRod:          "PoisonRod",
-		HolyRod:            "HolyRod",
-		GravityRod:         "GravityRod",
+		HealingRod:         "Healing Rod",
+		MythrilRod:         "Mythril Rod",
+		FlameRod:           "Flame Rod",
+		IceRod:             "Ice Rod",
+		ThunderRod:         "Thunder Rod",
+		PoisonRod:          "Poison Rod",
+		HolyRod:            "Holy Rod",
+		GravityRod:         "Gravity Rod",
 		Punisher:           "Punisher",
-		MagusRod:           "MagusRod",
-		ChocoboBrush:       "ChocoboBrush",
-		DaVinciBrush:       "DaVinciBrush",
-		MagicalBrush:       "MagicalBrush",
-		RainbowBrush:       "RainbowBrush",
+		MagusRod:           "Magus Rod",
+		ChocoboBrush:       "Chocobo Brush",
+		DaVinciBrush:       "DaVinci Brush",
+		MagicalBrush:       "Magical Brush",
+		RainbowBrush:       "Rainbow Brush",
 		Shuriken:           "Shuriken",
-		FumaShuriken:       "FumaShuriken",
+		FumaShuriken:       "Fuma Shuriken",
 		Pinwheel:           "Pinwheel",
-		ChainFlail:         "ChainFlail",
-		MoonringBlade:      "MoonringBlade",
-		MorningStar:        "MorningStar",
+		ChainFlail:         "Chain Flail",
+		MoonringBlade:      "Moonring Blade",
+		MorningStar:        "Morning Star",
 		Boomerang:          "Boomerang",
-		RisingSun:          "RisingSun",
+		RisingSun:          "Rising Sun",
 		Hawkeye:            "Hawkeye",
-		BoneClub:           "BoneClub",
+		BoneClub:           "Bone Club",
 		Sniper:             "Sniper",
-		WingEdge:           "WingEdge",
+		WingEdge:           "Wing Edge",
 		Cards:              "Cards",
 		Darts:              "Darts",
-		DeathTarot:         "DeathTarot",
-		ViperDarts:         "ViperDarts",
+		DeathTarot:         "Death Tarot",
+		ViperDarts:         "Viper Darts",
 		Dice:               "Dice",
-		FixedDice:          "FixedDice",
-		MetalKnuckle:       "MetalKnuckle",
-		MythrilClaw:        "MythrilClaw",
-		KaiserKnuckle:      "KaiserKnuckle",
-		VenomClaws:         "VenomClaws",
-		BurningFist:        "BurningFist",
-		DragonClaws:        "DragonClaws",
-		TigerFang:          "TigerFang",
+		FixedDice:          "Fixed Dice",
+		MetalKnuckle:       "Metal Knuckle",
+		MythrilClaw:        "Mythril Claw",
+		KaiserKnuckle:      "Kaiser Knuckle",
+		VenomClaws:         "Venom Claws",
+		BurningFist:        "Burning Fist",
+		DragonClaws:        "Dragon Claws",
+		Tigerfang:          "Tigerfang",
 		Buckler:            "Buckler",
-		HeavyShield:        "HeavyShield",
-		MythrilShield:      "MythrilShield",
-		GoldShield:         "GoldShield",
-		AegisShield:        "AegisShield",
-		DiamondShield:      "DiamondShield",
-		FlameShield:        "FlameShield",
-		IceShield:          "IceShield",
-		ThunderShield:      "ThunderShield",
-		CrystalShield:      "CrystalShield",
-		GenjiShield:        "GenjiShield",
-		TortoiseShield:     "TortoiseShield",
-		CursedShield:       "CursedShield",
-		PaladinShield:      "PaladinShield",
-		ForceShield:        "ForceShield",
-		LeatherHat:         "LeatherHat",
-		HairBand:           "HairBand",
-		PlumedHat:          "PlumedHat",
+		HeavyShield:        "Heavy Shield",
+		MythrilShield:      "Mythril Shield",
+		GoldenShield:       "Golden Shield",
+		AegisShield:        "Aegis Shield",
+		DiamondShield:      "Diamond Shield",
+		FlameShield:        "Flame Shield",
+		IceShield:          "Ice Shield",
+		ThunderShield:      "Thunder Shield",
+		CrystalShield:      "Crystal Shield",
+		GenjiShield:        "Genji Shield",
+		TortoiseShield:     "Tortoise Shield",
+		CursedShield:       "Cursed Shield",
+		PaladinShield:      "Paladin's Shield",
+		ForceShield:        "Force Shield",
+		LeatherHat:         "Leather Hat",
+		Hairband:           "Hairband",
+		PlumedHat:          "Plumed Hat",
 		Beret:              "Beret",
-		MagusHat:           "MagusHat",
+		MagusHat:           "Magus Hat",
 		Bandana:            "Bandana",
-		IronHelmet:         "IronHelmet",
-		Coronet:            "Coronet",
-		BardHat:            "BardHat",
-		GreenBeret:         "GreenBeret",
-		HeadBand:           "HeadBand",
-		MithrilHelm:        "MithrilHelm",
+		IronHelmet:         "Iron Helmet",
+		HypnoCrown:         "Hypno Crown",
+		PriestsMiter:       "Priest's Miter",
+		GreenBeret:         "Green Beret",
+		TwistHeadband:      "Twist Headband",
+		MythrilHelm:        "Mythril Helm",
 		Tiara:              "Tiara",
-		GoldHelmet:         "GoldHelmet",
-		TigerMask:          "TigerMask",
-		RedCap:             "RedCap",
-		MysteryVeil:        "MysteryVeil",
+		GoldenHelmet:       "Golden Helmet",
+		TigerMask:          "Tiger Mask",
+		RedCap:             "Red Cap",
+		MysteryVeil:        "Mystery Veil",
 		Circlet:            "Circlet",
-		RoyalCrown:         "RoyalCrown",
-		DiamondHelm:        "DiamondHelm",
-		DarkHood:           "DarkHood",
-		CrystalHelm:        "CrystalHelm",
-		OathViel:           "OathViel",
-		CatHood:            "CatHood",
-		GenjiHelm:          "GenjiHelm",
+		RoyalCrown:         "Royal Crown",
+		DiamondHelm:        "Diamond Helm",
+		BlackCowl:          "Black Cowl",
+		CrystalHelm:        "Crystal Helm",
+		OathViel:           "Oath Viel",
+		CatEarHood:         "Cat-Ear Hood",
+		GenjiHelmet:        "Genji Helmet",
 		Thornlet:           "Thornlet",
-		Titanium:           "Titanium",
-		LeatherArmor:       "LeatherArmor",
-		CottonRobe:         "CottonRobe",
-		KungFuSuit:         "KungFuSuit",
-		IronArmor:          "IronArmor",
-		SilkRobe:           "SilkRobe",
-		MithrilVest:        "MithrilVest",
-		NinjaGear:          "NinjaGear",
-		WhiteDress:         "WhiteDress",
-		MithrilMail:        "MithrilMail",
-		GaiaGear:           "GaiaGear",
-		MirageDress:        "MirageDress",
-		GoldArmor:          "GoldArmor",
-		PowerSash:          "PowerSash",
-		LightRobe:          "LightRobe",
-		DiamondVest:        "DiamondVest",
-		RedJacket:          "RedJacket",
-		ForceArmor:         "ForceArmor",
-		DiamondArmor:       "DiamondArmor",
-		BlackGarb:          "BlackGarb",
-		TaoRobe:            "TaoRobe",
-		CrystalMail:        "CrystalMail",
-		CzarinaGown:        "CzarinaGown",
-		GenjiArmor:         "GenjiArmor",
-		ReedCloak:          "ReedCloak",
-		MinervaBustier:     "MinervaBustier",
-		TabbySuit:          "TabbySuit",
-		ChocoboSuit:        "ChocoboSuit",
-		MoogleSuit:         "MoogleSuit",
-		NutkinSuit:         "NutkinSuit",
-		BehemothSuit:       "BehemothSuit",
-		SnowMuffler:        "SnowMuffler",
-		NoiseBlaster:       "NoiseBlaster",
-		BioBlaster:         "BioBlaster",
+		Saucer:             "Saucer",
+		LeatherArmor:       "Leather Armor",
+		CottonRobe:         "Cotton Robe",
+		KenpoGi:            "Kenpo Gi",
+		IronArmor:          "Iron Armor",
+		SilkRobe:           "Silk Robe",
+		MythrilVest:        "Mythril Vest",
+		NinjaGear:          "Ninja Gear",
+		WhiteDress:         "White Dress",
+		MythrilMail:        "Mythril Mail",
+		GaiaGear:           "Gaia Gear",
+		MirageDress:        "Mirage Dress",
+		GoldenArmor:        "Golden Armor",
+		PowerSash:          "Power Sash",
+		LuminousRobe:       "Luminous Robe",
+		DiamondVest:        "Diamond Vest",
+		RedJacket:          "Red Jacket",
+		ForceArmor:         "Force Armor",
+		DiamondArmor:       "Diamond Armor",
+		BlackGarb:          "Black Garb",
+		MagusRobe:          "Magus Robe",
+		CrystalMail:        "Crystal Mail",
+		RegalGown:          "Regal Gown",
+		GenjiArmor:         "Genji Armor",
+		ReedCloak:          "Reed Cloak",
+		MinervaBustier:     "Minerva Bustier",
+		TabbySuit:          "Tabby Suit",
+		ChocoboSuit:        "Chocobo Suit",
+		MoogleSuit:         "Moogle Suit",
+		NutkinSuit:         "Nutkin Suit",
+		BehemothSuit:       "Behemoth Suit",
+		SnowScarf:          "Snow Scarf",
+		Noiseblaster:       "Noiseblaster",
+		Bioblaster:         "Bioblaster",
 		Flash:              "Flash",
-		ChainSaw:           "ChainSaw",
+		Chainsaw:           "Chainsaw",
 		Debilitator:        "Debilitator",
 		Drill:              "Drill",
-		AirAnchor:          "AirAnchor",
-		AutoCrossbow:       "AutoCrossbow",
-		FlameScroll:        "FlameScroll",
-		WaterScroll:        "WaterScroll",
-		LightningScroll:    "LightningScroll",
-		InvisibilityScroll: "InvisibilityScroll",
-		ShadowScroll:       "ShadowScroll",
-		SilverSpectacles:   "SilverSpectacles",
-		StarPendant:        "StarPendant",
-		PeaceRing:          "PeaceRing",
+		AirAnchor:          "Air Anchor",
+		AutoCrossbow:       "Auto Crossbow",
+		FlameScroll:        "Flame Scroll",
+		WaterScroll:        "Water Scroll",
+		LightningScroll:    "Lightning Scroll",
+		InvisibilityScroll: "Invisibility Scroll",
+		ShadowScroll:       "Shadow Scroll",
+		SilverSpectacles:   "Silver Spectacles",
+		StarPendant:        "Star Pendant",
+		PeaceRing:          "Peace Ring",
 		Amulet:             "Amulet",
-		WhiteCape:          "WhiteCape",
-		JeweledRing:        "JeweledRing",
-		FairyRing:          "FairyRing",
-		BarrierRing:        "BarrierRing",
-		MythrilGlove:       "MythrilGlove",
-		ProtectRing:        "ProtectRing",
-		HermesSandals:      "HermesSandals",
-		ReflectRing:        "ReflectRing",
-		AngelWings:         "AngelWings",
-		AngelRing:          "AngelRing",
-		KnightsCode:        "KnightsCode",
-		DragonBoots:        "DragonBoots",
-		ZephyrCloak:        "ZephyrCloak",
-		PrincessRing:       "PrincessRing",
-		CursedCing:         "CursedCing",
+		WhiteCape:          "White Cape",
+		JeweledRing:        "Jeweled Ring",
+		FairyRing:          "Fairy Ring",
+		BarrierRing:        "Barrier Ring",
+		MythrilGlove:       "Mythril Glove",
+		ProtectRing:        "Protect Ring",
+		HermesSandals:      "Hermes Sandals",
+		ReflectRing:        "Reflect Ring",
+		AngelWings:         "Angel Wings",
+		AngelRing:          "Angel Ring",
+		KnightsCode:        "Knights Code",
+		DragoonBoots:       "Dragon Boots",
+		ZephyrCloak:        "Zephyr Cloak",
+		PrincessRing:       "Princess Ring",
+		CursedRing:         "Cursed Ring",
 		Earrings:           "Earrings",
-		GigasGlove:         "GigasGlove",
-		BlizzardRing:       "BlizzardRing",
-		BerserkerRing:      "BerserkerRing",
-		ThiefsBracer:       "ThiefsBracer",
-		GuardBracelet:      "GuardBracelet",
-		HerosRing:          "HerosRing",
+		GigasGlove:         "Gigas Glove",
+		BlizzardRing:       "Blizzard Ring",
+		BerserkerRing:      "Berserker Ring",
+		ThiefsBracer:       "Thief's Bracer",
+		GuardBracelet:      "Guard Bracelet",
+		HerosRing:          "Hero's Ring",
 		Ribbon:             "Ribbon",
-		MuscleBelt:         "MuscleBelt",
-		CrystalOrb:         "CrystalOrb",
-		GoldHairpin:        "GoldHairpin",
+		MuscleBelt:         "Muscle Belt",
+		CrystalOrb:         "Crystal Orb",
+		GoldHairpin:        "Gold Hairpin",
 		Celestriad:         "Celestriad",
-		BrigandsGlove:      "BrigandsGlove",
+		BrigandsGlove:      "Brigand's Glove",
 		Gauntlet:           "Gauntlet",
-		GenjiGlove:         "GenjiGlove",
-		HyperWrist:         "HyperWrist",
-		MastersScroll:      "MastersScroll",
-		PrayerBeads:        "PrayerBeads",
-		BlackBelt:          "BlackBelt",
-		HejisJitte:         "HejisJitte",
-		FakeMoustache:      "FakeMoustache",
-		SoulOfTamasa:       "SoulOfTamasa",
-		DragonHorn:         "DragonHorn",
-		MeritAward:         "MeritAward",
-		MementoRing:        "MementoRing",
-		SafetyBit:          "SafetyBit",
-		LichRing:           "LichRing",
-		MolulusCharm:       "MolulusCharm",
-		WardBangle:         "WardBangle",
-		MiracleShoes:       "MiracleShoes",
-		AlarmEarring:       "AlarmEarring",
-		GaleHairpin:        "GaleHairpin",
-		SniperEye:          "SniperEye",
-		GrowthEgg:          "GrowthEgg",
+		GenjiGlove:         "Genji Glove",
+		HyperWrist:         "Hyper Wrist",
+		MastersScroll:      "Master's Scroll",
+		PrayerBeads:        "Prayer Beads",
+		BlackBelt:          "Black Belt",
+		HejisJitte:         "Heji's Jitte",
+		FakeMoustache:      "Fake Moustache",
+		SoulOfTamasa:       "Soul Of Tamasa",
+		DragonHorn:         "Dragon Horn",
+		MeritAward:         "Merit Award",
+		MementoRing:        "Memento Ring",
+		SafetyBit:          "Safety Bit",
+		LichRing:           "Lich Ring",
+		MolulusCharm:       "Molulu's Charm",
+		WardBangle:         "Ward Bangle",
+		MiracleShoes:       "Miracle Shoes",
+		AlarmEarring:       "Alarm Earring",
+		GaleHairpin:        "Gale Hairpin",
+		SniperEye:          "Sniper Eye",
+		GrowthEgg:          "Growth Egg",
 		Tintinabulum:       "Tintinabulum",
-		SprintShoes:        "SprintShoes",
-		RenameCard:         "RenameCard",
+		SprintShoes:        "Sprint Shoes",
+		RenameCard:         "Rename Card",
 		Potion:             "Potion",
-		HiPotion:           "HiPotion",
-		XPotion:            "XPotion",
+		HiPotion:           "Hi-Potion",
+		XPotion:            "X-Potion",
 		Ether:              "Ether",
-		HiEther:            "HiEther",
-		XEther:             "XEther",
+		HiEther:            "Hi-Ether",
+		XEther:             "X-Ether",
 		Elixir:             "Elixir",
 		Megalixir:          "Megalixir",
-		PhoenixDown:        "PhoenixDown",
-		Revivify:           "Revivify",
+		PhoenixDown:        "Phoenix Down",
+		HolyWater:          "Holy Water",
 		Antidote:           "Antidote",
-		Eyedrop:            "Eyedrop",
-		Soft:               "Soft",
+		EyeDrops:           "Eye Dropss",
+		GoldNeedle:         "Gold Needle",
 		Remedy:             "Remedy",
-		SleepingBag:        "SleepingBag",
+		SleepingBag:        "Sleeping Bag",
 		Tent:               "Tent",
-		GreenCherry:        "GreenCherry",
-		Magicite:           "Magicite",
-		SuperBall:          "SuperBall",
-		EchoScreen:         "EchoScreen",
-		SmokeBomb:          "SmokeBomb",
-		TeleportStone:      "TeleportStone",
-		DriedMeat:          "DriedMeat",
+		GreenCherry:        "Green Cherry",
+		MagiciteShard:      "Magicite Shard",
+		SuperBall:          "Super Ball",
+		EchoScreen:         "Echo Screen",
+		SmokeBomb:          "Smoke Bomb",
+		TeleportStone:      "Teleport Stone",
+		DriedMeat:          "Dried Meat",
 		Nothing:            "Nothing",
 	}
 	eqname = map[Equipable]string{
 		Apocalypse:      "Apocalypse",
-		ZwillCrossblade: "ZwillCrossblade",
+		ZwillCrossblade: "Zwill Crossblade",
 		Zanmato:         "Zanmato",
 		Oborozuki:       "Oborozuki",
 		Longinus:        "Longinus",
 		Godhand:         "Godhand",
-		SavetheQueen:    "SavetheQueen",
-		StardustRod:     "StardustRod",
-		AngelBrush:      "AngelBrush",
-		FinalTrump:      "FinalTrump",
+		SavetheQueen:    "Save the Queen",
+		StardustRod:     "Stardust Rod",
+		AngelBrush:      "Angel Brush",
+		FinalTrump:      "Final Trump",
 		Gungnir:         "Gungnir",
-		DuelingMask:     "DuelingMask",
-		ScorpionTail:    "ScorpionTail",
-		BoneWrist:       "BoneWrist",
+		DuelingMask:     "Dueling Mask",
+		ScorpionTail:    "Scorpion Tail",
+		BoneWrist:       "Bone Wrist",
 		Excalipoor:      "Excalipoor",
 	}
 )

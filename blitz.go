@@ -46,12 +46,12 @@ func (b BlitzMastery) MarshalJSON() ([]byte, error) {
 }
 
 var blitznames = map[Blitz]string{
-	RagingFist:    "RagingFist",
-	AuraCannon:    "AuraCannon",
-	MeteorStrike:  "MeteorStrike",
-	RisingPhoenix: "RisingPhoenix",
+	RagingFist:    "Raging Fist",
+	AuraCannon:    "Aura Cannon",
+	MeteorStrike:  "Meteor Strike",
+	RisingPhoenix: "Rising Phoenix",
 	Chakra:        "Chakra",
-	RazorGale:     "RazorGale",
-	SoulSpiral:    "SoulSpiral",
-	PhantomRush:   "PhantomRush",
+	RazorGale:     "Razor Gale",
+	SoulSpiral:    "Soul Spiral",
+	PhantomRush:   "Phantom Rush",
 }

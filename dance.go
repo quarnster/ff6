@@ -46,12 +46,12 @@ func (l DanceMastery) MarshalJSON() ([]byte, error) {
 }
 
 var dancenames = map[Dance]string{
-	WindRhapsody:    "WindRhapsody",
-	ForestNocturne:  "ForestNocturne",
-	DesertLullaby:   "DesertLullaby",
-	LoveSerenade:    "LoveSerenade",
-	EarthBlues:      "EarthBlues",
-	WaterHarmony:    "WaterHarmony",
-	TwilightRequium: "TwilightRequium",
-	SnowmanRondo:    "SnowmanRondo",
+	WindRhapsody:    "Wind Rhapsody",
+	ForestNocturne:  "Forest Nocturne",
+	DesertLullaby:   "Desert Lullaby",
+	LoveSerenade:    "Love Serenade",
+	EarthBlues:      "Earth Blues",
+	WaterHarmony:    "Water Harmony",
+	TwilightRequium: "Twilight Requium",
+	SnowmanRondo:    "Snowman Rondo",
 }

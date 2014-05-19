@@ -33,7 +33,7 @@ const (
 	Crusader
 	RagnarokEsper
 	Kirin
-	ZoonaSeeker
+	ZonaSeeker
 	Carbunkl
 	Phantom
 	Seraph
@@ -58,7 +58,7 @@ var ename = map[Esper]string{
 	Maduin:        "Maduin",
 	Catoblepas:    "Catoblepas",
 	Bismark:       "Bismark",
-	CaitSith:      "CaitSith",
+	CaitSith:      "Cait Sith",
 	Quetzalli:     "Quetzalli",
 	Valigarmanda:  "Valigarmanda",
 	Odin:          "Odin",
@@ -68,7 +68,7 @@ var ename = map[Esper]string{
 	Crusader:      "Crusader",
 	RagnarokEsper: "Ragnarok",
 	Kirin:         "Kirin",
-	ZoonaSeeker:   "ZoonaSeeker",
+	ZonaSeeker:    "Zona Seeker",
 	Carbunkl:      "Carbunkl",
 	Phantom:       "Phantom",
 	Seraph:        "Seraph",
