@@ -1,3 +1,7 @@
+// Copyright 2014
+// Use of this source code is governed by a 2-clause
+// BSD-style license that can be found in the LICENSE file.
+
 package main
 
 import (
@@ -287,6 +291,13 @@ func fromjson() error {
 	var s SaveFile
 	if err := json.Unmarshal(data, &s); err != nil {
 		return err
+	}
+	_, err = os.Stat(savfile)
+	if err == nil {
+		_, err = os.Stat(savfile + ".bak")
+		if err != nil {
+			os.Rename(savfile, savfile+".bak")
+		}
 	}
 	return ioutil.WriteFile(savfile, s.Encode(), 0644)
 }
