@@ -36,9 +36,10 @@ type (
 		Checksum uint32
 		Padding  [12]byte
 	}
+
 	Body struct {
 		Characters   [16]Character
-		Unknown2     [16]byte //`json:"-"`
+		Parties      Party
 		Gil          uint24
 		Time         Time
 		Steps        uint24
@@ -83,10 +84,12 @@ type (
 	}
 
 	FileHeader struct {
-		Unknown  [36]byte
-		Version  uint32
-		Unknown2 [24]byte //`json:"-"`
-		Header   `json:"-"`
+		Unknown1     [20]byte
+		LastSaveSlot uint32
+		Unknown2     [12]byte
+		Version      uint32
+		Unknown3     [24]byte //`json:"-"`
+		Header       `json:"-"`
 	}
 	String16 [16]byte
 	HaltData struct {
