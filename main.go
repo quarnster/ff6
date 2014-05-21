@@ -37,29 +37,37 @@ type (
 		Padding  [12]byte
 	}
 
+	Location struct {
+		X uint8
+		Y uint8
+	}
+
 	Body struct {
-		Characters   [16]Character
-		Parties      Party
-		Gil          uint24
-		Time         Time
-		Steps        uint24
-		SpellMastery SpellMasteries
-		Allzeroes    [332]byte `json:"-"`
-		Something    uint8
-		Unknown222   [49]byte
-		Swdtech      uint8
-		BlitzMastery BlitzMastery
-		LoreMastery  LoreMastery
-		Beastiary    [32]uint8
-		DanceMastery DanceMastery
-		Unknown22    [361]byte
-		Something2   uint8
-		Unknown22a   [182]byte
-		Something3   uint8
-		Unknown22b   [51]byte
-		Something4   [5]byte
-		Unknown22c   [88]byte
-		Checksum     uint16 `json:"-"`
+		Characters                [16]Character
+		Parties                   Party
+		Gil                       uint24
+		Time                      Time
+		Steps                     uint24
+		SpellMastery              SpellMasteries
+		Allzeroes                 [332]byte `json:"-"`
+		Something                 uint8
+		Unknown222                [49]byte
+		Swdtech                   uint8
+		BlitzMastery              BlitzMastery
+		LoreMastery               LoreMastery
+		Beastiary                 [32]uint8
+		DanceMastery              DanceMastery
+		Unknown22                 [361]byte
+		Something2                uint8
+		Unknown22a                [169]byte
+		CharacterWorldmapLocation Location
+		AirshipWorldmapLocation   Location
+		Unknown22b                [9]byte
+		Something3                uint8
+		Unknown22c                [51]byte
+		Something4                [5]byte
+		Unknown22d                [88]byte
+		Checksum                  uint16 `json:"-"`
 	}
 	Iv struct {
 		EspersOwned EspersOwned
