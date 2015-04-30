@@ -55,7 +55,7 @@ type (
 		Swdtech                   uint8
 		BlitzMastery              BlitzMastery
 		LoreMastery               LoreMastery
-		Beastiary                 [32]uint8
+		RageMastery               RageMastery
 		DanceMastery              DanceMastery
 		Unknown22                 [361]byte
 		Something2                uint8
